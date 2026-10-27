@@ -3,7 +3,17 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 
-import siteConfiguration from './.figma/make/site.json'
+// Keep deployment settings here so uploads do not depend on hidden Figma files.
+const siteConfiguration = {
+  "description": "Empower users to configure, operate, and govern complex systems with an intuitive UI and intelligent agent assistance, enhancing precision and accountability.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
 
 
 // Vite config — https://vitejs.dev/config/
