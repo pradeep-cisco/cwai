@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "CiscoSans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+@layer base {
+  html { color-scheme: dark; }
+  body { background: #080f19; font-family: var(--font-sans); }
+  button { cursor: pointer; }
+  button:disabled { cursor: default; }
+  :focus-visible { outline: 2px solid #7dd3fc; outline-offset: 4px; }
+  * { scrollbar-width: thin; scrollbar-color: #334155 #0b1420; }
+}
+
+.slide-enter { animation: slide-enter 180ms ease-out; }
+@keyframes slide-enter {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide-enter { animation: none; }
+  * { transition-duration: 0s !important; }
+}
